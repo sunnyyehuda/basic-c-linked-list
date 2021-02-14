@@ -32,6 +32,11 @@ int main()
     DeleteList(head);
 }
 
+/// <summary>
+/// function that creates element and initial it with index as value and NULL as next cell pointer
+/// </summary>
+/// <param name="index"> the initial value </param>
+/// <returns> pointer to the created cell</returns>
 Node* CreateNewElement(int index)
 {
     Node* newElement = (Node*)malloc(sizeof(Node));
@@ -40,12 +45,24 @@ Node* CreateNewElement(int index)
     return newElement;
 }
 
+/// <summary>
+/// insert element in the head of the linked list
+/// </summary>
+/// <param name="oldHead"> the original list head pointer </param>
+/// <param name="newHead"> the new element </param>
+/// <returns> new linked list head pointer</returns>
 Node* PushElement(Node* oldHead, Node* newHead)
 {
     newHead->next = oldHead;
     return newHead;
 }
 
+/// <summary>
+/// insert element in the tail of the linked list
+/// </summary>
+/// <param name="oldHead"> the original list head pointer </param>
+/// <param name="newHead"> the new element </param>
+/// <returns> list head pointer</returns>
 Node* PushLastElement(Node* head, Node* newElement)
 {
     Node* lastElement = head;
@@ -57,6 +74,11 @@ Node* PushLastElement(Node* head, Node* newElement)
     return head;
 }
 
+/// <summary>
+/// pop element from the head of the linked list
+/// </summary>
+/// <param name="list"> the address of the head pointer </param>
+/// <returns> the value of the popped cell</returns>
 int PopElement(Node** list)
 {
     Node* temp = *list;
@@ -67,6 +89,11 @@ int PopElement(Node** list)
     return retVal;
 }
 
+/// <summary>
+/// pop element from the tail of the linked list
+/// </summary>
+/// <param name="list"> the linked list pointer </param>
+/// <returns> the value of the popped cell</returns>
 int PopLastElement(Node* list)
 {
     int retVal;
@@ -84,12 +111,21 @@ int PopLastElement(Node* list)
     return retVal;
 }
 
+/// <summary>
+/// function that print single Node element
+/// </summary>
+/// <param name="newElement"> the pointer for the Node element</param>
 void PrintElement(Node* newElement)
 {
     printf("the value of the element is: %d\n", newElement->value);
     printf("the next element address of the element is: %p\n", newElement->next);
 }
 
+
+/// <summary>
+/// function that print linked list from head to tail
+/// </summary>
+/// <param name="element"> pointer to the linked list head</param>
 void PrintList(Node* element)
 {
     while (element != NULL)
@@ -99,6 +135,10 @@ void PrintList(Node* element)
     }
 }
 
+/// <summary>
+/// recursive print function that prints the linked list from the tail to head
+/// </summary>
+/// <param name="element"> linked list head pointer</param>
 void ReversePrintList(Node* element)
 {
     if (element != NULL)
@@ -108,6 +148,11 @@ void ReversePrintList(Node* element)
     }
 }
 
+
+/// <summary>
+/// function that free all linked list allocated memory
+/// </summary>
+/// <param name="element"> linked list head pointer </param>
 void DeleteList(Node* element)
 {
     Node* next;
