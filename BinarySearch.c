@@ -1,6 +1,11 @@
 #include"data_types.h"
 #include<stdio.h>
 
+typedef struct node {
+    int value;
+    struct node* next;
+}Node;
+
 /// <summary>
 /// Binary search function get the pointer to the cell(if exist otherwise return NULL) with the given value
 /// </summary>
